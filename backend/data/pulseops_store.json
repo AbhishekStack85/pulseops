@@ -1,0 +1,384 @@
+{
+  "tickets": [
+    {
+      "id": "209b78e2-112c-463f-8900-add16627163e",
+      "ticket_number": "PULSE-101",
+      "customer_name": "Rohan Sharma",
+      "customer_email": "rohan@fintechcorp.io",
+      "category": "billing",
+      "priority": "critical",
+      "status": "in_progress",
+      "subject": "Payment deducted twice and production account suspended!",
+      "description": "We were charged $299 twice on our corporate credit card, and right after that our team dashboard got locked with 'Payment Failed'. Our entire team is blocked!",
+      "assigned_to": "Ananya (Billing Lead)",
+      "sla_target_hours": 2.0,
+      "sla_deadline": "2026-09-08T18:03:09.066759",
+      "is_breached": false,
+      "remaining_seconds": 2880.0,
+      "created_at": "2026-09-08T16:03:09.066759",
+      "updated_at": "2026-09-08T17:26:01.050693",
+      "resolved_at": null,
+      "messages": [
+        {
+          "id": "6fd54646-25ad-4e8d-93e6-d760a327ef27",
+          "sender_name": "Rohan Sharma",
+          "role": "customer",
+          "content": "We were charged $299 twice on our corporate credit card, and right after that our team dashboard got locked with 'Payment Failed'. Our entire team is blocked!",
+          "is_internal": false,
+          "created_at": "2026-09-08T16:03:09.066759"
+        },
+        {
+          "id": "50982947-1f8a-45b6-a6f1-bc68cbb3b96f",
+          "sender_name": "Support Agent",
+          "role": "agent",
+          "content": "Status changed to IN_PROGRESS. Note: Agent acknowledged ticket",
+          "is_internal": true,
+          "created_at": "2026-09-08T17:24:03.991226"
+        },
+        {
+          "id": "36274932-55eb-4168-b134-617b68e45577",
+          "sender_name": "Alex (Support Lead)",
+          "role": "agent",
+          "content": "hi we will resolve your ticket soon",
+          "is_internal": false,
+          "created_at": "2026-09-08T17:24:35.266943"
+        },
+        {
+          "id": "15f10fec-c143-4dd8-9d88-e0d9bae97ce2",
+          "sender_name": "Alex (Support Lead)",
+          "role": "agent",
+          "content": "Hi, we are actively investigating this issue right now with our engineering team.",
+          "is_internal": false,
+          "created_at": "2026-09-08T17:26:01.050693"
+        }
+      ],
+      "tags": [
+        "billing",
+        "critical-keyword"
+      ]
+    },
+    {
+      "id": "57a68c07-6e35-4a74-8f28-1adbeff453c8",
+      "ticket_number": "PULSE-102",
+      "customer_name": "Sarah Jenkins",
+      "customer_email": "sarah@cloudscale.net",
+      "category": "technical",
+      "priority": "critical",
+      "status": "resolved",
+      "subject": "500 Internal Server Error on CSV data export API",
+      "description": "Our automated nightly ETL pipeline is crashing because the /v2/export endpoint throws 500 error on payloads > 5MB. Production down risk for client reporting.",
+      "assigned_to": "Vikram (Backend Core)",
+      "sla_target_hours": 2.0,
+      "sla_deadline": "2026-09-08T15:45:09.066759",
+      "is_breached": true,
+      "remaining_seconds": -5400.0,
+      "created_at": "2026-09-08T13:45:09.066759",
+      "updated_at": "2026-09-08T17:50:49.530347",
+      "resolved_at": "2026-09-08T17:23:36.221909",
+      "messages": [
+        {
+          "id": "b14cc46e-5db4-4d84-8f9f-49db6fba767f",
+          "sender_name": "Sarah Jenkins",
+          "role": "customer",
+          "content": "Our automated nightly ETL pipeline is crashing because the /v2/export endpoint throws 500 error on payloads > 5MB. Production down risk for client reporting.",
+          "is_internal": false,
+          "created_at": "2026-09-08T13:45:09.066759"
+        },
+        {
+          "id": "b47aaba0-6268-416b-a3b0-46b40101b149",
+          "sender_name": "Vikram (Backend Core)",
+          "role": "agent",
+          "content": "Investigating the memory limits on the worker nodes. We have identified an unhandled OutOfMemory exception on the CSV generator.",
+          "is_internal": false,
+          "created_at": "2026-09-08T13:45:09.066759"
+        },
+        {
+          "id": "50465614-027b-4a46-af1b-004b9b432f1f",
+          "sender_name": "Support Agent",
+          "role": "agent",
+          "content": "Status changed to RESOLVED. Note: Issue resolved and verified",
+          "is_internal": true,
+          "created_at": "2026-09-08T17:23:36.221909"
+        },
+        {
+          "id": "8c69318a-f047-4e9a-8272-67c2aab8fe0c",
+          "sender_name": "Support Agent",
+          "role": "agent",
+          "content": "Status changed to OPEN. Note: Ticket reopened by staff",
+          "is_internal": true,
+          "created_at": "2026-09-08T17:25:08.256682"
+        },
+        {
+          "id": "e7047e34-e688-46c7-a2fd-2dd2698f81a3",
+          "sender_name": "Support Agent",
+          "role": "agent",
+          "content": "Status changed to IN_PROGRESS. Note: Agent acknowledged ticket",
+          "is_internal": true,
+          "created_at": "2026-09-08T17:33:58.899425"
+        },
+        {
+          "id": "a80f8f19-47e6-4465-be31-513cd0c60e3c",
+          "sender_name": "Support Agent",
+          "role": "agent",
+          "content": "Status changed to RESOLVED. Note: Issue resolved and verified",
+          "is_internal": true,
+          "created_at": "2026-09-08T17:50:49.530347"
+        }
+      ],
+      "tags": [
+        "technical",
+        "critical-keyword"
+      ]
+    },
+    {
+      "id": "d68fe703-ea65-45ed-844b-cb193e1970b3",
+      "ticket_number": "PULSE-103",
+      "customer_name": "Amit Patel",
+      "customer_email": "amit.patel@logistix.com",
+      "category": "account",
+      "priority": "high",
+      "status": "in_progress",
+      "subject": "SAML SSO Login failing with gateway timeout error",
+      "description": "None of our 45 staff members can login through Okta SSO. Getting 504 Gateway Timeout on callback redirect.",
+      "assigned_to": "Vikram (Backend Core)",
+      "sla_target_hours": 4.0,
+      "sla_deadline": "2026-09-08T20:15:09.066759",
+      "is_breached": false,
+      "remaining_seconds": 10800.0,
+      "created_at": "2026-09-08T16:15:09.066759",
+      "updated_at": "2026-09-08T17:05:09.066759",
+      "resolved_at": null,
+      "messages": [
+        {
+          "id": "7adb9ccf-947e-40c2-b138-5944422619e6",
+          "sender_name": "Amit Patel",
+          "role": "customer",
+          "content": "None of our 45 staff members can login through Okta SSO. Getting 504 Gateway Timeout on callback redirect.",
+          "is_internal": false,
+          "created_at": "2026-09-08T16:15:09.066759"
+        },
+        {
+          "id": "a4578405-62e3-4374-9877-50a6e00ff0c5",
+          "sender_name": "Vikram (Backend Core)",
+          "role": "agent",
+          "content": "We are rotating the certificate signing key. Should be resolved within 30 minutes.",
+          "is_internal": false,
+          "created_at": "2026-09-08T16:15:09.066759"
+        }
+      ],
+      "tags": [
+        "account",
+        "high-keyword"
+      ]
+    },
+    {
+      "id": "9e4682a7-ba70-40e9-ab53-b3b4e20f350a",
+      "ticket_number": "PULSE-104",
+      "customer_name": "Elena Rostova",
+      "customer_email": "elena@designcraft.studio",
+      "category": "technical",
+      "priority": "medium",
+      "status": "open",
+      "subject": "How to configure custom webhook retries with exponential backoff?",
+      "description": "We are receiving webhook payloads but need to know if the system retries failed delivery attempts if our staging server is temporarily offline.",
+      "assigned_to": "Priya (Developer Support)",
+      "sla_target_hours": 12.0,
+      "sla_deadline": "2026-09-09T03:15:09.066759",
+      "is_breached": false,
+      "remaining_seconds": 36000.0,
+      "created_at": "2026-09-08T15:15:09.066759",
+      "updated_at": "2026-09-08T17:05:09.066759",
+      "resolved_at": null,
+      "messages": [
+        {
+          "id": "478990e0-541b-494e-82a7-2834f101f722",
+          "sender_name": "Elena Rostova",
+          "role": "customer",
+          "content": "We are receiving webhook payloads but need to know if the system retries failed delivery attempts if our staging server is temporarily offline.",
+          "is_internal": false,
+          "created_at": "2026-09-08T15:15:09.066759"
+        }
+      ],
+      "tags": [
+        "technical"
+      ]
+    },
+    {
+      "id": "52e784b8-5bf1-443f-9b81-d56fe8d9c9f6",
+      "ticket_number": "PULSE-105",
+      "customer_name": "David Miller",
+      "customer_email": "david@apexmedia.co",
+      "category": "billing",
+      "priority": "high",
+      "status": "resolved",
+      "subject": "Need updated GST / VAT invoice for Q3 tax filing",
+      "description": "Can you please reissue invoice #INV-8821 with our updated company VAT registration number GB99281729?",
+      "assigned_to": "Ananya (Billing Lead)",
+      "sla_target_hours": 4.0,
+      "sla_deadline": "2026-09-08T15:15:09.066759",
+      "is_breached": false,
+      "remaining_seconds": -7200.0,
+      "created_at": "2026-09-08T11:15:09.066759",
+      "updated_at": "2026-09-08T17:05:09.066759",
+      "resolved_at": "2026-09-08T12:45:09.066759",
+      "messages": [
+        {
+          "id": "b96a3a08-2779-4662-a5c1-db006b60b0f5",
+          "sender_name": "David Miller",
+          "role": "customer",
+          "content": "Can you please reissue invoice #INV-8821 with our updated company VAT registration number GB99281729?",
+          "is_internal": false,
+          "created_at": "2026-09-08T11:15:09.066759"
+        },
+        {
+          "id": "75c4716e-bece-4b09-b223-2c07368badf1",
+          "sender_name": "Ananya (Billing Lead)",
+          "role": "agent",
+          "content": "Updated invoice has been regenerated and emailed to your billing contact. Marking ticket as resolved.",
+          "is_internal": false,
+          "created_at": "2026-09-08T11:15:09.066759"
+        }
+      ],
+      "tags": [
+        "billing"
+      ]
+    },
+    {
+      "id": "c7680e32-9411-477d-8193-be45b0939458",
+      "ticket_number": "PULSE-106",
+      "customer_name": "Karan Mehra",
+      "customer_email": "karan@startuppulse.in",
+      "category": "feature_request",
+      "priority": "low",
+      "status": "open",
+      "subject": "Feature suggestion: Dark mode theme and custom shortcuts",
+      "description": "It would be amazing to have a dark mode option for late-night ticket management, and shortcuts like 'E' to resolve and 'J/K' to navigate.",
+      "assigned_to": "Unassigned",
+      "sla_target_hours": 24.0,
+      "sla_deadline": "2026-09-09T13:15:09.066759",
+      "is_breached": false,
+      "remaining_seconds": 72000.0,
+      "created_at": "2026-09-08T13:15:09.066759",
+      "updated_at": "2026-09-08T17:05:09.066759",
+      "resolved_at": null,
+      "messages": [
+        {
+          "id": "c309a6a6-5285-47a9-91ef-551f4ca146ab",
+          "sender_name": "Karan Mehra",
+          "role": "customer",
+          "content": "It would be amazing to have a dark mode option for late-night ticket management, and shortcuts like 'E' to resolve and 'J/K' to navigate.",
+          "is_internal": false,
+          "created_at": "2026-09-08T13:15:09.066759"
+        }
+      ],
+      "tags": [
+        "feature_request",
+        "low-keyword"
+      ]
+    },
+    {
+      "id": "2e93b03f-280f-4b68-8dd6-9eca1a49a24f",
+      "ticket_number": "PULSE-107",
+      "customer_name": "Test Customer",
+      "customer_email": "test@domain.com",
+      "category": "billing",
+      "priority": "critical",
+      "status": "in_progress",
+      "subject": "Unauthorized charge of $499 on credit card",
+      "description": "I did not authorize this charge! Payment failed alert.",
+      "assigned_to": "Unassigned",
+      "sla_target_hours": 2.0,
+      "sla_deadline": "2026-09-08T19:15:32.648913",
+      "is_breached": false,
+      "remaining_seconds": 7200.0,
+      "created_at": "2026-09-08T17:15:32.648920",
+      "updated_at": "2026-09-08T17:34:10.903914",
+      "resolved_at": null,
+      "messages": [
+        {
+          "id": "886eccf5-21cb-4ac7-9f2c-1e62e4b0f352",
+          "sender_name": "Test Customer",
+          "role": "customer",
+          "content": "I did not authorize this charge! Payment failed alert.",
+          "is_internal": false,
+          "created_at": "2026-09-08T17:15:32.648920"
+        },
+        {
+          "id": "cfeff7b5-51ff-4fcc-921c-0ceba4710dd2",
+          "sender_name": "Support Agent",
+          "role": "agent",
+          "content": "Status changed to IN_PROGRESS. Note: Assigned to on-call engineer",
+          "is_internal": true,
+          "created_at": "2026-09-08T17:15:32.667039"
+        },
+        {
+          "id": "26e07e68-ece1-496b-b486-f8556d7cb5be",
+          "sender_name": "Agent Alex",
+          "role": "agent",
+          "content": "Hi, we are verifying the transaction ID with our merchant gateway right now.",
+          "is_internal": false,
+          "created_at": "2026-09-08T17:15:32.685166"
+        },
+        {
+          "id": "793868ee-8254-416d-95e0-f8b2ff46decc",
+          "sender_name": "Alex (Support Lead)",
+          "role": "agent",
+          "content": "The fix has been deployed and verified in production. Please try again and let us know!",
+          "is_internal": false,
+          "created_at": "2026-09-08T17:34:10.903914"
+        }
+      ],
+      "tags": [
+        "billing",
+        "critical-keyword"
+      ]
+    },
+    {
+      "id": "70ee6f74-1451-4954-8f4d-b6762d290c4b",
+      "ticket_number": "PULSE-108",
+      "customer_name": "Maria Garcia",
+      "customer_email": "maria@agency.com",
+      "category": "account",
+      "priority": "high",
+      "status": "open",
+      "subject": "Request: Slack webhook integration for SLA alerts",
+      "description": "Would love to receive channel pings when an SLA breaches or an urgent ticket is raised.",
+      "assigned_to": "Unassigned",
+      "sla_target_hours": 4.0,
+      "sla_deadline": "2026-09-08T21:48:58.700312",
+      "is_breached": false,
+      "remaining_seconds": 14400.0,
+      "created_at": "2026-09-08T17:48:58.700373",
+      "updated_at": "2026-09-08T17:48:58.700373",
+      "resolved_at": null,
+      "messages": [
+        {
+          "id": "ef115c36-24d0-46e9-86b4-f1af4090be13",
+          "sender_name": "Maria Garcia",
+          "role": "customer",
+          "content": "Would love to receive channel pings when an SLA breaches or an urgent ticket is raised.",
+          "is_internal": false,
+          "created_at": "2026-09-08T17:48:58.700373"
+        }
+      ],
+      "tags": [
+        "account",
+        "manual-override"
+      ]
+    }
+  ],
+  "activity_logs": [
+    {
+      "ticket_id": "2e93b03f-280f-4b68-8dd6-9eca1a49a24f",
+      "action": "TICKET_CREATED",
+      "details": "Ticket PULSE-107 created with CRITICAL priority (2.0h SLA).",
+      "timestamp": "2026-09-08T17:15:32.648920"
+    },
+    {
+      "ticket_id": "70ee6f74-1451-4954-8f4d-b6762d290c4b",
+      "action": "TICKET_CREATED",
+      "details": "Ticket PULSE-108 created with HIGH priority (4.0h SLA).",
+      "timestamp": "2026-09-08T17:48:58.700373"
+    }
+  ]
+}
