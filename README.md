@@ -1,75 +1,131 @@
-# PulseOps ⚡ — Real-Time Customer Support Triage & SLA Incident Hub
+# PulseOps ⚡
 
-> **Full-Stack Enterprise Support Desk with Smart NLP Auto-Triage, Live SLA Countdown Timers, and Real-Time Incident Streaming.**
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
----
-
-## 🎯 The Real-World Problem It Solves
-
-High-growth SaaS companies and fintechs receive hundreds of customer tickets every day across payment gateways, webhooks, and core applications. 
-- **The Pain Point:** Urgent issues (such as credit card double charges, server outages, or SSO lockouts) get buried under low-priority queries (such as cosmetic typos or minor suggestions).
-- **The Consequence:** High-paying enterprise clients experience prolonged downtime, resulting in broken SLAs (Service Level Agreements), costly refunds, and churn.
-- **The Solution (PulseOps):** An automated triage desk that parses incoming tickets, calculates severity & SLA response windows dynamically, provides live countdown timers for support agents, and aggregates SLA compliance metrics for engineering leaders.
+> **Real-Time Customer Support Triage & SLA Incident Engine.**  
+> Built for fast-moving SaaS engineering teams to automate incident classification, prevent SLA breaches, and manage high-volume customer inquiries in real time.
 
 ---
 
-## 🛠️ Tech Stack
+## 🎯 Overview
 
-| Layer | Technology | Role & Architecture |
-|---|---|---|
-| **Frontend** | **React.js (Vite, JavaScript)** | High-performance split-pane inbox, live countdown timers, reactive search/filters, and canned response workflows. |
-| **Styling** | **Tailwind CSS + Lucide Icons** | Polished, accessible dark-theme UI inspired by modern developer platforms like Linear and Vercel. |
-| **Backend** | **Python 3.14 + FastAPI** | High-throughput asynchronous REST APIs, Pydantic data validation, and real-time WebSocket event broadcasting. |
-| **Database** | **MongoDB (Motor Async Driver)** | Flexible JSON-document store for threaded conversations, auto-triage tags, and dynamic incident metadata (with zero-friction local fallback). |
+When production outages, billing discrepancies, or critical API failures occur, support queues get flooded with tickets. Without automated prioritization, urgent enterprise incidents often get lost beneath minor inquiries, causing SLA (Service Level Agreement) violations and customer churn.
 
----
-
-## 🌟 Key Features
-
-1. **Smart Auto-Triage Engine**:
-   - Analyzes ticket subjects and descriptions against critical incident patterns (e.g. *payment failed, double charged, 500 error, outage*).
-   - Automatically computes SLA response windows:
-     - **Critical:** 2.0h SLA window
-     - **High:** 4.0h SLA window
-     - **Medium:** 12.0h SLA window
-     - **Low:** 24.0h SLA window
-2. **Live SLA Countdown Badges**:
-   - Real-time client-side ticker calculating remaining seconds until breach.
-   - Distinct states: *Compliant (Cyan) ➔ Urgent <45m (Amber) ➔ Breached (Pulsing Red) ➔ Resolved (Emerald)*.
-3. **Agent Workspace & Split-Pane Layout**:
-   - Threaded conversation viewer separating customer communications from internal staff notes.
-   - Quick one-click canned response insertions.
-   - Status workflow transitions (`Open` ➔ `In Progress` ➔ `Resolved` ➔ `Reopened`).
-4. **WebSocket Real-Time Sync**:
-   - Automatically pushes ticket creations, status transitions, and message replies across all open agent sessions.
-5. **Executive SLA & Incident Analytics**:
-   - Real-time KPI cards: Global SLA Compliance Rate (%), Active Incident Queue, Breach Count, and Average Resolution Time.
-   - Priority and category distribution visualizations.
+**PulseOps** solves this by providing:
+1. **Rule-Based NLP Auto-Triage Engine**: Automatically scans ticket payload text for urgency signals (payment failures, 500 errors, system down) and assigns severity tiers (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) along with dynamic SLA target resolution windows.
+2. **Real-Time Incident Queue**: A split-pane workspace featuring client-side countdown badges that calculate remaining seconds until breach.
+3. **Bi-Directional WebSocket Sync**: Instantly broadcasts ticket updates, state transitions, and staff notes across all active agents without page refreshes.
+4. **Executive SLA Analytics**: Aggregates resolution velocity, category distributions, and compliance scores.
 
 ---
 
-## 🚀 Getting Started
+## 🏗️ System Architecture
 
-### 1. Start the FastAPI Backend
-```powershell
-cd pulseops/backend
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-* Interactive Swagger Docs: `http://localhost:8000/docs`
-* Health Check: `http://localhost:8000/api/v1/health`
+[ Customer / Client Portal ]  ── (HTTP REST)  ──┐
+                                                 │
+[ Support Agent Dashboard  ]  ── (WebSockets) ──┼──► [ FastAPI Backend Core ] ──► [ MongoDB Document Store ]
+  - Split-pane Workspace                         │     - Triage Engine               - Tickets Collection
+  - Dynamic SLA Countdown                        │     - SLA Tracker Service         - Audit Logs Collection
+  - Internal Staff Notes                         │     - Event Broadcaster
+```
 
-### 2. Start the React Frontend
-```powershell
-cd pulseops/frontend
+---
+
+## ⚡ Tech Stack
+
+| Component | Technology | Description |
+|---|---|---|
+| **Frontend** | React 18, Vite | High-performance reactive UI with client-side state caching and live second-level interval calculations. |
+| **Styling** | Tailwind CSS v4, Lucide Icons | Dark-mode interface designed for high-density enterprise data operations. |
+| **Backend API** | Python 3.14, FastAPI | Asynchronous ASGI REST server handling validation via Pydantic and async I/O. |
+| **Real-Time** | WebSockets (`/ws`) | Persistent full-duplex socket channel broadcasting incident updates. |
+| **Database** | MongoDB (Motor Async) | JSON document store managing conversation threads, audit trails, and dynamic metadata. |
+
+---
+
+## 🚀 Key Features
+
+* **Intelligent Auto-Triage**:
+  * Evaluates subject and body content against priority criteria.
+  * Dynamically computes deadlines:
+    * `CRITICAL`: 2-hour SLA response target
+    * `HIGH`: 4-hour SLA response target
+    * `MEDIUM`: 12-hour SLA response target
+    * `LOW`: 24-hour SLA response target
+* **Live SLA Countdown Indicators**:
+  * Dynamic visual status:
+    * 🔵 **Cyan:** Compliant window active
+    * 🟡 **Amber:** Urgent (< 45 minutes remaining)
+    * 🔴 **Pulsing Red:** Overdue / SLA breached
+    * 🟢 **Emerald:** Resolved within SLA commitment
+* **Split-Pane Agent Workspace**:
+  * Threaded message history separating customer communications from internal staff-only notes.
+  * Canned responses for accelerated ticket resolution.
+  * One-click lifecycle transitions: `Open` ➔ `In Progress` ➔ `Resolved` ➔ `Closed`.
+* **SLA Analytics Engine**:
+  * Real-time compliance score percentage calculation (`(Compliant / Total) * 100`).
+  * Average resolution duration tracking.
+  * Breakdown charts by severity tier and category.
+
+---
+
+## 🛠️ Local Development & Setup
+
+### Prerequisites
+- Python 3.10+
+- Node.js 18+ and npm
+
+### 1. Backend Setup
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Seed initial sample incidents
+python seed_data.py
+
+# Start the FastAPI server
+python -m uvicorn app.main:app --reload
+```
+
+The interactive OpenAPI / Swagger documentation will be available at `/docs`.
+
+### 2. Frontend Setup
+```bash
+# In a new terminal, navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start Vite development server
 npm run dev
 ```
-* Open your browser at: `http://localhost:5173`
 
 ---
 
-## 📄 Resume Bullet Points (Ready to copy-paste into your CV)
+## 📡 API Specification
 
-* **Full-Stack Support Desk & SLA Triage Hub (React.js, FastAPI, Python, MongoDB)**
-  * *Designed and built an enterprise incident triage platform that automatically computes SLA response windows and categorizes support tickets using FastAPI and asynchronous background workers.*
-  * *Architected a dual-role React dashboard with live countdown timers, WebSocket streaming for real-time ticket ingestion, and an audit trail for SLA breach detection.*
-  * *Structured flexible document schemas and aggregation pipelines in MongoDB to track historical resolution times and executive compliance rates (>85% SLA target).*
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/v1/tickets` | Retrieve filterable list of tickets with live SLA calculations |
+| `POST` | `/api/v1/tickets` | Create a new ticket (triggers automated triage engine) |
+| `GET` | `/api/v1/tickets/{id}` | Fetch full ticket conversation history and audit metadata |
+| `PATCH` | `/api/v1/tickets/{id}/status` | Update incident status and record resolution timestamps |
+| `POST` | `/api/v1/tickets/{id}/messages` | Append customer response or internal staff note |
+| `GET` | `/api/v1/analytics` | Aggregate global SLA compliance rate and queue distributions |
+| `WS` | `/ws` | WebSocket connection for real-time incident event streaming |
+| `GET` | `/api/v1/health` | Service health status and database connectivity check |
+
+---
+
+## 📄 License
+
+MIT License. Designed and developed as a modern enterprise incident response system.
